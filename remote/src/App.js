@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useState } from "react"
 
 const App = () => {
+  // const [text, setText] = useState("hello world")
   return (
     <div
       style={{
@@ -12,9 +13,9 @@ const App = () => {
         display: "flex",
       }}
     >
-      <h1>remote</h1>
+      {/* <button onClick={() => setText("goodbye world")}>{text}</button> */}
     </div>
   )
 }
 
-export { App }
+export default App
