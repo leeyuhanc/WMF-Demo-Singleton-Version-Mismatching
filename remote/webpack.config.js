@@ -36,7 +36,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "remote",
       exposes: {
-        "./App": "./src/index", // cartShow is the alias
+        "./App": "./src/index",
       },
     }),
     new HtmlWebpackPlugin({
