@@ -1,7 +1,9 @@
 import React, { useState } from "react"
 
+import faker from "faker"
+
 const App = () => {
-  // const [text, setText] = useState("hello world")
+  // console.log("in remote react version", React.version)
   return (
     <div
       style={{
@@ -13,7 +15,9 @@ const App = () => {
         display: "flex",
       }}
     >
-      {/* <button onClick={() => setText("goodbye world")}>{text}</button> */}
+      {/* {text} */}
+      {/* {React.version} */}
+      {faker.commerce.productName()}
     </div>
   )
 }

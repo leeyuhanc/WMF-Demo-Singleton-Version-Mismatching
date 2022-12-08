@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin")
+const deps = require("./package.json").dependencies
 
 module.exports = {
   name: "remote",
@@ -38,6 +39,16 @@ module.exports = {
       filename: "remoteEntry.js",
       exposes: {
         "./App": "./src/App",
+      },
+      shared: {
+        react: {
+          singleton: true, // allows a single version of the shared module in the shared scope
+          requiredVersion: `>=${deps["react"]}`,
+        },
+        "react-dom": {
+          singleton: true, // allows a single version of the shared module in the shared scope
+          requiredVersion: `>=${deps["react-dom"]}`,
+        },
       },
     }),
     new HtmlWebpackPlugin({
