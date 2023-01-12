@@ -1,6 +1,8 @@
 import React from "react"
 const Info = () => (
-  <div style={{ marginTop: "200px", display: "flex", flexDirection: "column" }}>
+  <div
+    style={{ marginLeft: "200px", display: "flex", flexDirection: "column" }}
+  >
     <div
       style={{
         backgroundColor: "linen",
