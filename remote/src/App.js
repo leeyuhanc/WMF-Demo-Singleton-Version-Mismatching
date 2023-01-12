@@ -1,9 +1,6 @@
-import React, { useState } from "react"
-
-import faker from "faker"
+import React from "react"
 
 const App = () => {
-  // console.log("in remote react version", React.version)
   return (
     <div
       style={{
@@ -15,9 +12,7 @@ const App = () => {
         display: "flex",
       }}
     >
-      {/* {text} */}
-      {/* {React.version} */}
-      {faker.commerce.productName()}
+      {React.version}
     </div>
   )
 }

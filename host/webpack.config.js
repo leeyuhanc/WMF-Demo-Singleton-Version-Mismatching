@@ -43,11 +43,9 @@ module.exports = {
       },
       shared: {
         react: {
-          singleton: true, // allows a single version of the shared module in the shared scope
           requiredVersion: deps["react"],
         },
         "react-dom": {
-          singleton: true, // allows a single version of the shared module in the shared scope
           requiredVersion: deps["react-dom"],
         },
       },
