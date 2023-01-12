@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 const App = () => {
-  // const [text, setText] = useState("hello world")
+  const [text, setText] = useState("hello world")
   return (
     <div
       style={{
@@ -13,7 +13,7 @@ const App = () => {
         display: "flex",
       }}
     >
-      {/* <button onClick={() => setText("goodbye world")}>{text}</button> */}
+      <button onClick={() => setText("goodbye world")}>{text}</button>
     </div>
   )
 }
