@@ -1,7 +1,7 @@
 import React from "react"
 import { Info } from "./Info"
 const MfeRemote = React.lazy(() => import("remote/App"))
-
+import faker from "faker"
 const App = () => {
   return (
     <React.Suspense fallback={<h1>loading</h1>}>

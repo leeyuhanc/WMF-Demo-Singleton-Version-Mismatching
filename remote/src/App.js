@@ -1,7 +1,8 @@
 import React, { useState } from "react"
 
+import faker from "faker"
 const App = () => {
-  // const [text, setText] = useState("hello world")
+  const [text, setText] = useState("hello world")
   return (
     <div
       style={{
@@ -14,7 +15,7 @@ const App = () => {
       }}
     >
       {React.version}
-      {/* <button onClick={() => setText("goodbye world")}>{text}</button> */}
+      <button onClick={() => setText("goodbye world")}>{text}</button>
     </div>
   )
 }
