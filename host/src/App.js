@@ -4,7 +4,6 @@ import { Info } from "./Info"
 const MfeRemote = React.lazy(() => import("remote/App"))
 
 const App = () => {
-  console.log("in host react version", React.version)
   return (
     <React.Suspense fallback={<h1>loading</h1>}>
       <div style={{ display: "flex" }}>
