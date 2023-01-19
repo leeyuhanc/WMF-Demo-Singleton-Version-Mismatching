@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin")
-const deps = require("./package.json").dependencies
 
 module.exports = {
   mode: "development",
@@ -40,11 +39,6 @@ module.exports = {
       name: "host",
       remotes: {
         remote: "remote@http://localhost:8081/remoteEntry.js",
-      },
-      shared: {
-        react: {
-          requiredVersion: deps["react"],
-        },
       },
     }),
   ],
