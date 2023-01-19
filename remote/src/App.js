@@ -2,7 +2,7 @@ import React from "react"
 
 import { useState } from "react"
 const App = () => {
-  // const [word, setWord] = useState("hello")
+  const [word, setWord] = useState("hello")
   return (
     <div
       style={{
@@ -15,7 +15,7 @@ const App = () => {
       }}
     >
       {React.version}
-      {/* <button onClick={() => setWord("bye")}>{word}</button> */}
+      <button onClick={() => setWord("bye")}>{word}</button>
     </div>
   )
 }
