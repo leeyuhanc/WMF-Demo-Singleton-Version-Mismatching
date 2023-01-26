@@ -1,28 +1,39 @@
 import React from "react"
-import { Info } from "./Info"
 
-const MfeRemote = React.lazy(() => import("remote/App"))
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+import { About, Home, Mfe } from "./routes"
 
 const App = () => {
   return (
-    <React.Suspense fallback={<h1>loading</h1>}>
-      <div style={{ display: "flex" }}>
-        <div
-          style={{
-            backgroundColor: "linen",
-            width: "800px",
-            height: "800px",
-            alignItems: "center",
-            justifyContent: "center",
-            display: "flex",
-          }}
-        >
-          {React.version}
-          <MfeRemote />
-        </div>
-        <Info />
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/mfe">Microfrontend</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/mfe">
+            <Mfe />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
       </div>
-    </React.Suspense>
+    </Router>
   )
 }
 
