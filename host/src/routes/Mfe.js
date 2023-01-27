@@ -1,9 +1,15 @@
 import React from "react"
 import { Info } from "../Info"
 
-const MfeRemote = React.lazy(() => import("remote/App"))
+import { useFederatedComponent } from "../../useFederatedComponent"
 
 const Mfe = () => {
+  const { Component: MfeRemote, errorLoading } = useFederatedComponent(
+    "http://localhost:8081/remoteEntry.js",
+    "remote",
+    "./App"
+  )
+
   return (
     <React.Suspense fallback={<h1>loading</h1>}>
       <div style={{ display: "flex" }}>
@@ -18,7 +24,9 @@ const Mfe = () => {
           }}
         >
           {React.version}
-          <MfeRemote />
+          {errorLoading
+            ? "error loading the microfrontend "
+            : MfeRemote && <MfeRemote />}
         </div>
         <Info />
       </div>

@@ -38,9 +38,6 @@ module.exports = {
     }),
     new ModuleFederationPlugin({
       name: "host",
-      remotes: {
-        remote: "remote@http://localhost:8081/remoteEntry.js",
-      },
       shared: {
         react: {
           requiredVersion: deps["react"],
